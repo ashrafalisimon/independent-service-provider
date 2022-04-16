@@ -1,12 +1,19 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/pages/Header/Header';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/pages/Home/Home/Home';
 
 function App() {
   return (
-    <div>
-      <h1 className='bg-primary'>This is Dream Focus Click</h1>
-    </div>
+    <>
+     <Header/>
+     <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/home' element={<Home/>}/>
+     </Routes> 
+    </>
   );
 }
 

@@ -1,0 +1,31 @@
+.bg-dream-primary{
+    background-color: #fca21167 ;
+}
+.bg-blue-color{
+    background-color: #14213dda;
+}
+.banner-title{
+    margin-top: 130px;
+    font-size: 52px;
+    margin-bottom: 40px;
+
+}
+.banner-img{
+    margin-left: 100px;
+}
+
+@media (max-width: 575.98px) {
+    .banner-title{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 07px;
+    
+    }
+    .bg-dream-primary p{
+        text-align: center;
+    }
+    .banner-img{
+        margin-left: 0;
+    }
+}
