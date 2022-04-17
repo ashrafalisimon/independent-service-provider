@@ -6,12 +6,12 @@ import {getAuth} from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBTU_m2lOnDGdo-J5189jsBUXFGGdN9ih0",
-  authDomain: "dream-focus-click.firebaseapp.com",
-  projectId: "dream-focus-click",
-  storageBucket: "dream-focus-click.appspot.com",
-  messagingSenderId: "208231188014",
-  appId: "1:208231188014:web:07d31b82a43b7ac1b141bf"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
