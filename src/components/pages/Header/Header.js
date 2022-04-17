@@ -1,12 +1,19 @@
 import React from "react";
+import { signOut } from 'firebase/auth';
 import {  Container, Form, FormControl, Nav, Navbar } from "react-bootstrap";
 import logo from "../../../imgaes/Dlogo.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import auth from "../../../firebase.init";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
+    const handleSignOut = () =>{
+        signOut(auth);
+    }
   return (
     <div>
       <Navbar  bg="light"  expand="lg">
@@ -32,9 +39,14 @@ const Header = () => {
               <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
-              <Nav.Link as={Link} to="/login">
+              {
+                user ? 
+                <span className='text-black-50 mt-2 fs-5' onClick={handleSignOut}>log out</span>
+                :
+                <Nav.Link as={Link} to="/login">
                 Login
               </Nav.Link>
+              }
             </Nav>
             <Form className="d-flex sm:w-100 position-relative">
                 <FormControl className="me-2 w-100" type="text" placeholder="" />

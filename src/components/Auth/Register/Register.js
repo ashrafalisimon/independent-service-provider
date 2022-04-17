@@ -1,8 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import GoogleLogo from '../../../imgaes/google.png'
+import Loading from '../../pages/Loading/Loading';
 
 const Register = () => {
+    const nameRef = useRef('');
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth , {sendEmailVerification: true});
+      const navigate = useNavigate();
+      if(loading){
+        return <Loading></Loading>
+    }
+
+
+      const handleRegister = async (event) => {
+        event.preventDefault();
+        const name = nameRef.current.value;;
+        const email = emailRef.current.value;;
+        const password = passwordRef.current.value;;
+
+         createUserWithEmailAndPassword(email, password);
+        navigate('/home');
+    }
     return (
         <div className="">
         <div className="container">
@@ -10,9 +37,10 @@ const Register = () => {
             <div className="form-title text-center ">
               <h2 className="blue-color fs-2 fw-bold my-5 ">Register</h2>
             </div>
-            <form>
+            <form onSubmit={handleRegister}>
               <div className="form-input">
                 <input
+                ref={nameRef}
                   type="text"
                   name=""
                   id=""
@@ -21,7 +49,7 @@ const Register = () => {
                 />
               </div>
               <div className="form-input">
-                <input
+                <input ref={emailRef}
                   type="email"
                   name=""
                   id=""
@@ -31,6 +59,7 @@ const Register = () => {
               </div>
               <div className="form-input">
                 <input
+                ref={passwordRef}
                   type="password"
                   name=""
                   id=""

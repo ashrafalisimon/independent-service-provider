@@ -8,6 +8,7 @@ import Footer from './components/pages/Footer/Footer';
 import BookNow from './components/pages/BookNow/BookNow';
 import Login from './components/Auth/Login/Login';
 import Register from './components/Auth/Register/Register';
+import RequireAuth from './components/pages/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -16,7 +17,11 @@ function App() {
      <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/home' element={<Home/>}/>
-        <Route path='/bookNow' element={<BookNow/>}/>
+        <Route path='/bookNow' element={
+           <RequireAuth>
+          <BookNow/>
+         </RequireAuth>
+        }/>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
      </Routes>
