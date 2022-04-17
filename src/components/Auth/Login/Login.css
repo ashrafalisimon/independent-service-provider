@@ -1,6 +1,5 @@
 .login-resister{
     width: 450px;
-    height: 550px;
     margin: 50px auto;
     background-color: #fca2113e;
     border-radius: 10px;
@@ -9,7 +8,7 @@
 input:focus {
     outline: none;
 }
-.form-input input{
+.form-input input, textarea{
     width: 80%;
     border: none;
     display: block;
