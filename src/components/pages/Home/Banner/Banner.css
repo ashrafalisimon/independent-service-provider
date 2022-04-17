@@ -4,15 +4,34 @@
 .bg-blue-color{
     background-color: #14213dda;
 }
+.bg-orange{
+    background-color: #fca311;
+}
+.orange-color{
+    color: #fca311 ;
+}
+.gray-color{
+    color: #e5e5e5;
+}
+.blue-color{
+    color: #14213d;
+}
 .banner-title{
     margin-top: 130px;
     font-size: 52px;
     margin-bottom: 40px;
+}
+.line-div{
+    height: 2px;
+    background-color: #e5e5e5 ;
+}
+.card-border{
+    border: 2px solid #fff;
+}
+.card-border:hover{
+    border: 2px solid #fca311;
+}
 
-}
-.banner-img{
-    margin-left: 100px;
-}
 
 @media (max-width: 575.98px) {
     .banner-title{

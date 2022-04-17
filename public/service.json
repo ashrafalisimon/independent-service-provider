@@ -1,0 +1,35 @@
+[
+    {
+        "id": "001",
+        "price": "1500 /- per hours",
+        "serviceName": "Studio Photoshoot",
+        "serviceTitle": "Perfect for rainy days",
+        "serviceItem01" : "Up to 5 hours",
+        "serviceItem02" : "Raw & Edited file",
+        "serviceItem03" : "20 edited photos",
+        "picture": "https://lictor.jhkinfotech.in/Lictor-Photographer/images/video-photoshoot.jpg"
+      },
+    {
+        "id": "002",
+        "price": "2500 /- per hours",
+        "serviceName": "Street Fashion",
+        "serviceTitle": "For real fashionistas",
+        "serviceItem01" : "Up to 4 hours",
+        "serviceItem02" : "Raw & Edited file",
+        "serviceItem03" : "30 edited photos",
+        "picture": "https://lictor.jhkinfotech.in/Lictor-Photographer/images/street-fashion.jpg"
+      },
+    {
+        "id": "003",
+        "price": "2000 /- per hours",
+        "serviceName": "Video + Photoshoot",
+        "serviceTitle": "For quality content",
+        "serviceItem01" : "Up to 5 hours",
+        "serviceItem02" : "Raw, Edited & Video file ",
+        "serviceItem03" : "20 edited photos",
+        "picture": "https://lictor.jhkinfotech.in/Lictor-Photographer/images/studio-photoshoot.jpg"
+      }
+]
+
+
+
