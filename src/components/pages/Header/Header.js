@@ -1,7 +1,10 @@
 import React from "react";
-import { Button, Container, Form, FormControl, Nav, Navbar } from "react-bootstrap";
+import {  Container, Form, FormControl, Nav, Navbar } from "react-bootstrap";
 import logo from "../../../imgaes/Dlogo.png";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -33,9 +36,9 @@ const Header = () => {
                 Login
               </Nav.Link>
             </Nav>
-            <Form className="d-flex sm:w-100">
-                <FormControl className="me-2" type="text" placeholder="" />
-                <Button variant="outline-dark">Search</Button>
+            <Form className="d-flex sm:w-100 position-relative">
+                <FormControl className="me-2 w-100" type="text" placeholder="" />
+                <span className="fs-4 position-absolute end-0 me-3"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></span>
             </Form>
           </Navbar.Collapse>
         </Container>
