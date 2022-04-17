@@ -1,0 +1,44 @@
+.login-resister{
+    width: 450px;
+    height: 550px;
+    margin: 50px auto;
+    background-color: #fca2113e;
+    border-radius: 10px;
+    border: 2px solid #14213d;
+}
+input:focus {
+    outline: none;
+}
+.form-input input{
+    width: 80%;
+    border: none;
+    display: block;
+    background-color: transparent;
+    margin: 40px auto;
+    padding: 02px;
+    font-size: 18px;
+    border-bottom: 2px solid  #14213d;
+}
+.btn-submit{
+    width: 80%;
+    display: block;
+    margin: 20px auto;
+    background-color: #14213d;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    transition: 0.4s;
+}
+.btn-submit:hover{
+    background-color: #fca311 ;
+}
+.link-click span{
+    display: block;
+    width: 80%;
+    margin: 05px auto;
+}
+.link-click span a{
+    color: black;
+}

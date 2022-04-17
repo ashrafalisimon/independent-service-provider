@@ -9,7 +9,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar  bg="light"  expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="" />
