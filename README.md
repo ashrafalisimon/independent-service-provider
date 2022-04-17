@@ -1,3 +1,10 @@
+# Dream Focus Click
+Live Site Link [Dream Focus Click]().
+* Photographer Website
+* Detailed information of the photographer is given.
+* If you want to hire him, you have to go to the book page.
+* You can hire him by going here and peeling up the form
+* Technologies use (react, react bootstrap, fontawsome, firebase etc.)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
