@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import GoogleLogo from '../../../imgaes/google.png';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { sendPasswordResetEmail } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
@@ -15,6 +15,7 @@ const Login = () => {
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation();
+    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
     let from = location.state?.from?.pathname || "/";
     let errorElement;
     const [
@@ -23,13 +24,13 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-      if (user) {
+      if (user || user1) {
         navigate(from, { replace: true });
     }
-    if(loading){
+    if(loading || loading1){
         return <Loading/>
     }
-    if (error) {
+    if (error || error1) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
     const handleSubmit = event => {
@@ -90,7 +91,7 @@ const Login = () => {
             </span>
           </div>
           <div>
-          <button className="btn-submit" type="submit">
+          <button onClick={()=> signInWithGoogle()} className="btn-submit" type="submit">
                 <img className="me-1" src={GoogleLogo} alt="" />
               Google Sing In
               </button>

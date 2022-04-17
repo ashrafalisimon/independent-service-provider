@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import GoogleLogo from '../../../imgaes/google.png'
@@ -9,6 +9,7 @@ const Register = () => {
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -16,7 +17,7 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth , {sendEmailVerification: true});
       const navigate = useNavigate();
-      if(loading){
+      if(loading || loading1){
         return <Loading></Loading>
     }
 
@@ -76,7 +77,7 @@ const Register = () => {
               </span>
             </div>
             <div>
-            <button className="btn-submit" type="submit">
+            <button  onClick={() => signInWithGoogle()} className="btn-submit" type="submit">
                   <img className="me-1" src={GoogleLogo} alt="" />
                 Google Sing In
                 </button>
